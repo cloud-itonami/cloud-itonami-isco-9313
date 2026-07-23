@@ -12,7 +12,8 @@
                :effect :propose :site-id str :work-zone any :stake kw
                :confidence n :rationale str}. The marked-zones set and
   safety-plan sign-off state live on the registered site record itself
-  (see `construction.store`), not on the proposal.")
+  (see `construction.store`), not on the proposal."
+  (:require #?(:clj [clojure.edn :as edn] :cljs [cljs.reader :as edn])))
 
 (defprotocol Advisor
   (-advise [advisor store request] "request -> proposal map"))
@@ -42,7 +43,7 @@
 
 (defn- parse-proposal [content]
   (try
-    (let [p (read-string content)]
+    (let [p (edn/read-string content)]
       (if (map? p)
         (assoc p :effect :propose)
         {:op :unknown :effect :propose :confidence 0.0 :stake :high
