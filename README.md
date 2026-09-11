@@ -11,7 +11,7 @@ This repository designs a forkable OSS business for an independent construction 
 (`construction.governor`), following the itonami actor pattern
 (ADR-2607011000): `:intake -> :advise -> :govern -> :decide -+-> :commit
 (:ok?) +-> :request-approval (:escalate?, human-in-the-loop interrupt)
-+-> :hold (:hard?)`. 14 tests / 30 assertions green (`clojure -M:test`).
++-> :hold (:hard?)`. 14 tests / 30 assertions green (`kbb -M:test`).
 HARD invariants (always hold, never overridable): client provenance,
 no-actuation (`:effect` must be `:propose`), a registered site basis
 for any crew-dispatch proposal, the proposed work zone being a member
