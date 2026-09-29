@@ -1,6 +1,6 @@
 (ns construction.store
   "SSoT for the ISCO-08 9313 independent construction labour practice
-  actor (itonami actor pattern, ADR-2607011000 / CLAUDE.md Actors
+  actor (itonami actor pattern, ADR-2607011000 / AGENTS.md Actors
   section; README's 'Robotics premise' — a material-handling and
   site-prep robot performs debris clearing, material staging and
   site-marking under this advisor/governor pair, which never
